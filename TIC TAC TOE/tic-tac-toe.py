@@ -14,12 +14,12 @@ def print_board():
 def player_move(icon):
     if icon=="X":
         number=1
-    elif icon=="0":
+    elif icon=="O":
         number=2
     print("Your tunr player {}".format(number))
     choice=int(input("Ente the value(1-9) : ").strip())
     if board[choice-1]==" ":
-        board[choice-1]==icon
+        board[choice-1]=icon
     else:
         print()
         print("Space is already taken")
@@ -51,13 +51,16 @@ while True:
     if victory("X"):
         print("X wins")
         break
+        
     elif draw():
         print("Draw")
         break
-    player_move("0")
-    if victory("0"):
-        print_board()
-        print("0 Wins")
+        
+    player_move("O")
+    print_board()
+    if victory("O"):
+        
+        print("o Wins")
         break
     elif draw():
         print("drwa")
